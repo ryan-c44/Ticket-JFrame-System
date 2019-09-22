@@ -53,9 +53,11 @@ public class TicketJFrame extends JFrame {
 		GridLayout layout = new GridLayout(0, 2);
 		ticketTopPanel.setLayout(layout);
 		
+		ticketTopPanel.add(new JLabel("Adult Ticket $50. Child Ticket $25."));
+		ticketTopPanel.add(new JLabel(""));
+		
 		initAdultTicketGUI();
 		initChildTicketGUI();
-		
 	}
 	
 	private void initAdultTicketGUI() {
