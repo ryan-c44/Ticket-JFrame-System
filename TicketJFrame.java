@@ -106,13 +106,14 @@ public class TicketJFrame extends JFrame {
 				new ActionListener() {
 					@Override
 					public void actionPerformed(ActionEvent e) {
+						
+						if((childTicketTF.getText().isEmpty() || adultTicketTF.getText().isEmpty()) || (childTicketTF.getText().isEmpty() && adultTicketTF.getText().isEmpty())) {
+							adultTicketTF.setText("0");
+							childTicketTF.setText("0");
+						}
+						
 						int adultTicket = Integer.parseInt(adultTicketTF.getText()) * 50;
 						int childTicket = Integer.parseInt(childTicketTF.getText()) * 25;
-						
-						if((childTicketTF.getText().equals(null) || adultTicketTF.getText().equals(null)) || (childTicketTF.getText().equals(null) && adultTicketTF.getText().equals(null))) {
-							adultTicket = 0;
-							childTicket = 0;
-						}
 						
 						int total = adultTicket + childTicket; 
 						totalPriceTF.setText(Integer.toString(total));
